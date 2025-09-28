@@ -233,7 +233,7 @@
 {`@article{anonymous2025abbel,
 	title={ABBEL: LLM Agents Acting through Belief Bottlenecks Expressed in Language},
 	author={Anonymous},
-	journal={Under review at ICLR},
+	journal={Preprint. Under review.},
 	year={2025}
 }`}</pre>
 		</div>
