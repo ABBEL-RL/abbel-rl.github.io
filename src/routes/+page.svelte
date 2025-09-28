@@ -30,7 +30,7 @@
 				</div>
 				<div class="mt-6 md:mt-8 text-base md:text-lg">
 					Anonymous authors <br />
-					<span class="mt-2 block text-sm italic">Paper under double-blind review at ICLR 2026</span>
+					<span class="mt-2 block text-sm italic">Preprint.</span>
 				</div>
 				<div class="flex mt-8 space-x-4">
 					<a href={paper_link}>
