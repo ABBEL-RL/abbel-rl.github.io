@@ -2,14 +2,16 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ main ]  # or master
-
-permissions:
-  contents: write  # This gives write permission
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+      
     steps:
       - uses: actions/checkout@v3
       
@@ -24,8 +26,17 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # or ./build, check where build outputs go
+          path: ./dist  # or ./build
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+          with:
+            personal_token: ${{ secrets.PERSONAL_TOKEN }}  # Use personal_token instead
+            publish_dir: ./dist
