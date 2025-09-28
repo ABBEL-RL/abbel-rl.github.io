@@ -32,8 +32,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # or ./build
+          path: ./build  # Changed from ./dist to ./build
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm audit fix --audit-level=moderate || true
