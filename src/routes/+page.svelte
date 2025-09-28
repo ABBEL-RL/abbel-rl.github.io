@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Obfuscated Activations</title>
+	<title>ABBEL</title>
 </svelte:head>
 
 <div class="text-lg">
