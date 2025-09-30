@@ -127,7 +127,7 @@
 			through natural language belief states as bottlenecks in reasoning. We evaluate across 
 			six multi-step environments with varying levels of reasoning complexity and structure, 
 			and compare with standard multi-step interaction (Vanilla) and prompting for belief generation
-			before action selection while maintaining the trajectory in context (Belief prompting).
+			before acting while maintaining the trajectory in context (Belief prompting).
 		</p>
 	</Block>
 	<Block size="max-w-5xl" padding="pb-0">
@@ -193,8 +193,9 @@
 	</Block>
 	<Block size="max-w-4xl" class="text-base text-gray-600">
 		<em><strong>RL training improves ABBEL performance.</strong></em> Left: Test success 
-		rates over training steps show ABBEL quickly reduces its performance gap. Right: With 
-		belief grading, ABBEL outperforms models with access to the full history.
+		rates over training steps show ABBEL quickly reduces its performance gap. Right:
+		regret curves show that ABBEL still explores less efficiently after training, but
+		belief grading further boosts performance to surpass the models with full history access.
 	</Block>
 
 	<Block>
@@ -212,8 +213,12 @@
 	<Block>
 		<h1 class="mb-4 text-2xl font-bold" id="results">Multi-Objective Question Answering</h1>
 		<p class="pb-4">
-			We train in a realistic setting with extreme horizon generalization. We compare with 
-			MEM1, which also uses RL to train LLMs to generate and act on context summaries.
+			We evaluate ABBEL in a realistic question-answering setting with more extreme horizon generalization,
+			training on two questions and evaluating on up to 16. We compare with 
+			MEM1, which also uses RL to train LLMs to generate and act on context summaries, but combines
+			memory and reasoning in a single summary. ABBEL's isolated belief state makes it possible to train with
+			a belief length penalty without degrading reasoning, generating significantly more compressed belief states
+			while maintaining a performance advantage.
 		</p>
 	</Block>
 	<Block size="max-w-5xl" padding="pb-0">
