@@ -170,7 +170,7 @@
 			Though frontier models faced a performance drop under ABBEL, there is a significant 
 			divergence between ABBEL and typical LLM pre-training settings. We propose using 
 			Reinforcement Learning (RL) to improve LLMs' ability to generate and reason through 
-			belief bottlenecks.
+			belief bottlenecks, and report results from training Qwen2.5-7B-Instruct.
 		</p>
 	</Block>
 	<Block size="max-w-5xl" padding="pb-0">
@@ -214,11 +214,10 @@
 		<h1 class="mb-4 text-2xl font-bold" id="results">Multi-Objective Question Answering</h1>
 		<p class="pb-4">
 			We evaluate ABBEL in a realistic question-answering setting with more extreme horizon generalization,
-			training on two questions and evaluating on up to 16. We compare with 
-			MEM1, which also uses RL to train LLMs to generate and act on context summaries, but combines
-			memory and reasoning in a single summary. ABBEL's isolated belief state makes it possible to train with
-			a belief length penalty without degrading reasoning, generating significantly more compressed belief states
-			while maintaining a performance advantage.
+			training on two questions and testing on up to 16. We compare with 
+			MEM1, which also uses RL to train LLMs to generate and act on context summaries, but includes all reasoning in the summary.
+			ABBEL's isolated belief states reduce distracting information and allows for penalizing the belief lengths without degrading reasoning, 
+			generating significantly more compressed beliefs while maintaining a performance advantage.
 		</p>
 	</Block>
 	<Block size="max-w-5xl" padding="pb-0">
